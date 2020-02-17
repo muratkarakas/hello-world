@@ -15,7 +15,7 @@ public class HelloWorldApplication {
 
 	@GetMapping
 	public String greeting(){
-		return "hello worl";
+		return "hello world";
 	}
 
 }
