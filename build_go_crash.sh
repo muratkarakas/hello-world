@@ -1,0 +1,1 @@
+docker build -t mkarakas/hello-world:go-crash -f Dockerfile.go.crash .

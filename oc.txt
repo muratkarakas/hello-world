@@ -1,0 +1,59 @@
+1.
+
+oc new-app  --docker-image=mkarakas/hello-world --name hello-world2
+
+same steps from UI
+
+2.
+oc new-project dev             
+
+oc new-app  --image-stream=java   --code=https://github.com/muratkarakas/hello-world.git   --name=hello-world
+
+oc expose svc/hello-world
+
+
+oc describe route/hello-world
+
+same steps from UI
+
+
+3.
+oc tag --source=docker mkarakas/hello-world  hello-world3:latest
+
+
+
+oc new-app  --image-stream=hello-world3 --name=hello-world3
+
+
+oc tag --source=docker nginxinc/nginx-unprivileged  hello-world3:latest
+
+
+
+
+4.
+
+oc describe imagestream
+
+oc tag dev-hello/hello-world@sha256:826f49f4506da308e7fdbfeada570f8af184bd5acc2e49ad9857d20ea7e2d997 dev-hello/hello-world:promoteToTest
+
+
+oc new-project test-hello
+
+
+oc policy add-role-to-group  system:image-puller system:serviceaccounts:test-hello -n dev-hello
+
+
+
+
+oc new-app --image-stream="dev-hello/hello-world:promoteToTest"
+
+oc new-app  dev-hello/hello-world:promoteToTest --name=abc
+
+
+
+
+oc new-app  --image-stream=python   --code=https://github.com/muratkarakas/hello-world.git   --name=hello-python
+
+
+
+
