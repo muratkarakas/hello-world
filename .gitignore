@@ -3,3 +3,6 @@
 .sts4-cache
 target
 .project
+node_modules
+npm-report.html
+package-lock.json
