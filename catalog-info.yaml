@@ -1,3 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
 metadata:
+  name: hello-world
   annotations:
+    github.com/project-slug: muratkarakas/hello-world
     backstage.io/techdocs-ref: url:https://github.com/muratkarakas/hello-world
+spec:
+  type: other
+  lifecycle: production
+  owner: infrastructure
+    
