@@ -1,0 +1,7 @@
+site_name: 'helloworld-docs'
+
+nav:
+  - Home: index.md
+
+plugins:
+  - techdocs-core
